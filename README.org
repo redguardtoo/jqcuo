@@ -1,0 +1,76 @@
+* jqcuo
+Powerful and simple solution to spell check code in command line.
+* Install
+Run below commands in shell,
+#+begin_src sh
+# Ubuntu/Debian
+sudo apt install -y emacs25 aspell aspell-en && git clone https://github.com/redguardtoo/jqcuo.git && #+end_src
+#+end_src
+* Usage
+One line to spell check a code file (say "hello.js"),
+#+begin_src sh
+emacs --batch -Q -l jqcuo/init.el --eval '(let* ((ispell-program-name "aspell") (ispell-extra-args (wucuo-aspell-cli-args t))) (wucuo-spell-check-file "hello.js" t))'
+#+end_src
+
+[[https://github.com/redguardtoo/spell-check-code-in-ci][Live Demo]].
+* FAQ
+** Programming Languages Supported
+| Name              | Supported |
+|-------------------+-----------|
+| C                 | Yes       |
+| Java              | Yes       |
+| Python            | Yes       |
+| C++               | Yes       |
+| C#                | Yes       |
+| Visual Basic      | Yes       |
+| JavaScript        | Yes       |
+| PHP               | Yes       |
+| HTML              | Yes       |
+| CSS               | Yes       |
+| SCSS              | Yes       |
+| R                 | Yes       |
+| SQL               | Yes       |
+| Go                | Yes       |
+| Swift             | Yes       |
+| Perl              | Yes       |
+| Assembly language | Yes       |
+| Ruby              | Yes       |
+| MATLAB            | No        |
+| Octave            | No        |
+| Groovy            | Yes       |
+| Rust              | Yes       |
+| Objective-C       | Yes       |
+| Dart              | Yes       |
+| Logo              | No        |
+| SAS               | Yes       |
+| Scratch           | No        |
+| D                 | Yes       |
+| Julia             | Yes       |
+| Pascal            | Yes       |
+| ABAP              | No        |
+| Scala             | Yes       |
+| Scheme            | No        |
+| COBOL             | Yes       |
+| Kotlin            | Yes       |
+| Lisp              | Yes       |
+| OpenEdge ABL      | No        |
+| Fortran           | Yes       |
+| Ada               | Yes       |
+| Lua               | Yes       |
+| LabVIEW           | No        |
+| prolog            | Yes       |
+| TypeScript        | Yes       |
+| VBScript          | Yes       |
+| Haskell           | Yes       |
+| Hack              | No        |
+| Apex              | No        |
+| PowerShell        | Yes       |
+| Bash              | Yes       |
+| Clojure           | Yes       |
+| Fountain          | Yes       |
+| VimScript         | Yes       |
+| CSV               | Yes       |
+| Yaml              | Yes       |
+| Verilog           | Yes       |
+| Org               | Yes       |
+| Markdown          | Yes       |
