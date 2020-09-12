@@ -145,7 +145,7 @@
 (add-code-file-type 'markdown-mode "\\.\\(md\\|markdown\\)$")
 (add-code-file-type 'snippet-mode "\\.yasnippet$")
 (add-code-file-type 'csharp-mode "\\.cs$")
-(add-code-file-type 'basic-mode "\\.cs$")
+(add-code-file-type 'basic-mode "\\.vb$")
 (add-code-file-type 'go-mode "\\.go$")
 (add-code-file-type 'swift-mode "\\.swift$")
 (add-code-file-type 'dart-mode "\\.dart$")
@@ -234,6 +234,7 @@
 (require-package 'haskell-mode)
 (require-package 'clojure-mode)
 (require-package 'powershell)
+(require-package 'yasnippet) ; snippet-mode
 
 ;; @see https://ess.r-project.org/Manual/ess.html#Activating-and-Loading-ESS
 ;; loading all ess features at start up
