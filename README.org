@@ -7,9 +7,14 @@ Run below commands in shell,
 sudo apt install -y emacs25 aspell aspell-en && git clone https://github.com/redguardtoo/jqcuo.git && #+end_src
 #+end_src
 * Usage
-One line to spell check a code file (say "hello.js"),
+One line to spell check all files in current directory,
 #+begin_src sh
-emacs --batch -Q -l jqcuo/init.el --eval '(let* ((ispell-program-name "aspell") (ispell-extra-args (wucuo-aspell-cli-args t))) (wucuo-spell-check-file "hello.js" t))'
+emacs --batch -Q -l jqcuo/init.el --eval '(my-spell-check-directory ".")'
+#+end_src
+
+One line to spell check file,
+#+begin_src sh
+emacs --batch -Q -l jqcuo/init.el --eval '(my-spell-check-file "src/hello.js")'
 #+end_src
 
 [[https://github.com/redguardtoo/spell-check-code-in-ci][Live Demo]].

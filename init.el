@@ -170,6 +170,27 @@
 (require 'wucuo)
 (require 'elpa-mirror)
 
+;; {{ set up flyspell
+(setq ispell-program-name "aspell")
+(setq ispell-extra-args (wucuo-aspell-cli-args t))
+
+(defun my-spell-check-directory (&optional directory)
+  "Spell check DIRECTORY"
+  (interactive)
+  (unless (and directory (not (string= directory "")))
+    ;; scan current directory by default
+    (setq directory "."))
+  (wucuo-spell-check-directory directory t))
+
+(defun my-spell-check-file (file)
+  "Spell check FILE."
+  (cond
+   ((file-exists-p file)
+    (wucuo-spell-check-file file t))
+   (t
+    (message "%s dose not exist." (file-truename file)))))
+;; }}
+
 ;; See `custom-file' for details.
 (setq custom-file (expand-file-name (concat my-emacs-d "custom-set-variables.el")))
 (if (file-exists-p custom-file) (load custom-file t t))
