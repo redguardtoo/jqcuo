@@ -19,6 +19,10 @@ emacs --batch -Q -l jqcuo/init.el --eval '(my-spell-check-file "src/hello.js")'
 
 [[https://github.com/redguardtoo/spell-check-code-in-ci][Live Demo]].
 * FAQ
+** Set up personal plain text dictionary
+Open =personal-dictionary.txt=. Make sure its header (the first line) has correct format. Then add your own words into this file.
+
+You can also check =init.el= to see how this dictionary is passed to aspell command line program.
 ** Programming Languages Supported
 | Name              | Supported |
 |-------------------+-----------|

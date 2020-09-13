@@ -174,6 +174,12 @@
 (setq ispell-program-name "aspell")
 (setq ispell-extra-args (wucuo-aspell-cli-args t))
 
+;; pass the personal dictionary to aspell
+(let* ((dict (concat user-emacs-directory "personal-dictionary.txt")))
+  (when (file-exists-p dict)
+    ;; don't wrap the dict path with double quotes, it does not work
+    (push (format "--personal=%s" dict) ispell-extra-args)))
+
 (defun my-spell-check-directory (&optional directory)
   "Spell check DIRECTORY"
   (interactive)
