@@ -174,6 +174,12 @@
 (setq ispell-program-name "aspell")
 (setq ispell-extra-args (wucuo-aspell-cli-args t))
 
+
+(defun my-make-progress-reporter-hack (orig-func &rest args))
+(advice-add 'make-progress-reporter :around #'my-make-progress-reporter-hack)
+(defun my-progress-reporter-done-hack (orig-func &rest args))
+(advice-add 'progress-reporter-done :around #'my-progress-reporter-done-hack)
+
 ;; pass the personal dictionary to aspell
 (let* ((dict (concat user-emacs-directory "personal-dictionary.txt")))
   (when (file-exists-p dict)
